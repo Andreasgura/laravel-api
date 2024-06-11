@@ -13,10 +13,30 @@ class ProjectController extends Controller
     {
         $projects = Project::with('technologies')->paginate(3);
         return response()->json([
-            'success' => true,
+            'status' => 'success',
+            'message'=> 'Ok',
             'results'=> $projects
-        ]);
+        ], 200);
 
+    }
+
+    public function show($slug)
+    {
+        $project = Project::where('slug', $slug)->with('technologies')->first();
+        if ($project) {
+        return response()->json([
+            'status'=> 'success',
+            'message'=> 'Ok',
+            'results'=> $project
+        ], 200);
+
+        }
+
+        return response()->json([
+            'status'=> 'error',
+            'message'=> 'Project not found',
+            'results'=> []
+        ], 404);
     }
 
 }
