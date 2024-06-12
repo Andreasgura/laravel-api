@@ -15,7 +15,9 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        //
+        $technology = Technology::all();
+        dd($technology);
+        return view('admin.technologies.index', compact('technology'));
     }
 
     /**

@@ -10,6 +10,7 @@
     <div >
         <img class="w-75" src="{{asset('storage/' . $project->screenshot)}}" alt="">
     </div>    
+    <div> {{ $project->technologies }}</div>
     <a href="{{ $project->link_github }}">Vedi su GitHub</a>
     <br>
     <a href="{{ $project->link_website }}">Vai al sito</a>
