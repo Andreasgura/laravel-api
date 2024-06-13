@@ -221,4 +221,13 @@ Storage::put('images', $data['image']); //ritorna il path
 #per visualizzare 
 <img src="{{ asset('storage/' . $post->cover_image) }}">
 
+
+#mail
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=9b63ebf727f111
+MAIL_PASSWORD=c1728f1c215af8
 ```
+
